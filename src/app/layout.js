@@ -1,4 +1,4 @@
-import {  Inter, Poppins } from "next/font/google";
+import {  Inter, Playfair_Display, Poppins } from "next/font/google";
 import "./globals.css";
 
 export const inter = Inter({
@@ -10,6 +10,10 @@ export const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400","500", "600", "700"],
   variable: "--font-poppins",
+});
+export const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
 });
 
 export const metadata = {
