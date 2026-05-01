@@ -1,8 +1,10 @@
 import { playfair, poppins } from '@/app/layout';
 import AnimalCard from '@/components/shared/AnimalCard';
+import AnimalList from '@/components/shared/AnimalList';
+import AnimalSkeleton from '@/components/shared/AnimalSkeleton';
 import { getAnimals } from '@/data/AnimalsData';
 import { Tabs } from '@heroui/react';
-import React from 'react'
+import React, { Suspense } from 'react'
 
 const AnimalsPage = async() => {
   const data = await getAnimals();
@@ -30,11 +32,9 @@ const AnimalsPage = async() => {
           >
             Cows
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {cows.map((animal) => (
-              <AnimalCard key={animal.id} animal={animal}></AnimalCard>
-            ))}
-          </div>
+          <Suspense fallback={<AnimalSkeleton />}>
+            <AnimalList type="Cow" />
+          </Suspense>
         </div>
 
         {/* goats */}
@@ -44,11 +44,9 @@ const AnimalsPage = async() => {
           >
             Goats
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {goats.map((animal) => (
-              <AnimalCard key={animal.id} animal={animal}></AnimalCard>
-            ))}
-          </div>
+          <Suspense fallback={<AnimalSkeleton />}>
+            <AnimalList type="Goat" />
+          </Suspense>
         </div>
 
         {/* sheep */}
@@ -58,11 +56,9 @@ const AnimalsPage = async() => {
           >
             Sheep
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {sheep.map((animal) => (
-              <AnimalCard key={animal.id} animal={animal}></AnimalCard>
-            ))}
-          </div>
+          <Suspense fallback={<AnimalSkeleton />}>
+            <AnimalList type="Sheep" />
+          </Suspense>
         </div>
       </div>
     </div>
