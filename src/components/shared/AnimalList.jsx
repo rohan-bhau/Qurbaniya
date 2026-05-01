@@ -1,6 +1,6 @@
 
+import AnimalCard from "@/components/shared/AnimalCard";
 import { getAnimals } from "@/data/AnimalsData";
-import AnimalCard from "./AnimalCard";
 
 
 const AnimalList = async ({ type }) => {

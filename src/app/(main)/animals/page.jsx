@@ -7,14 +7,14 @@ import { Tabs } from '@heroui/react';
 import React, { Suspense } from 'react'
 
 const AnimalsPage = async() => {
-  const data = await getAnimals();
-  console.log(data);
-  const cows = data.filter((animal) => animal.type === "Cow");
-  // console.log(cows)
-  const goats = data.filter((animal) => animal.type === "Goat");
-  console.log(goats)
-  const sheep = data.filter((animal) => animal.type === "Sheep");
-  console.log(sheep)
+  // const data = await getAnimals();
+  // console.log(data);
+  // const cows = data.filter((animal) => animal.type === "Cow");
+  // // console.log(cows)
+  // const goats = data.filter((animal) => animal.type === "Goat");
+  // console.log(goats)
+  // const sheep = data.filter((animal) => animal.type === "Sheep");
+  // console.log(sheep)
   return (
     <div className="bg-[#f7fbff] py-15">
       <div className="container mx-auto ">
