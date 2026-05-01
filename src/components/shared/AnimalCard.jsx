@@ -56,9 +56,9 @@ const AnimalCard = ({ animal }) => {
             </p>
             <p className="text-green-600 font-semibold mt-2">৳ {price}</p>
           </div>
-          <div className="flex flex-col justify-end items-center">
+          <div className="flex flex-col justify-center items-center">
             <GrFavorite className="cursor-pointer hover:text-orange-400" />
-            <MdOutlineShoppingCart className="text-xl cursor-pointer hover:text-orange-400" />
+            {/* <MdOutlineShoppingCart className="text-xl cursor-pointer hover:text-orange-400" /> */}
           </div>
         </div>
 

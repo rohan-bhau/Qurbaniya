@@ -56,90 +56,100 @@ const AnimalDetailPage = async ({ params }) => {
           />
         </div>
         {/* center info */}
-        <div className="mx-auto">
-          <h2 className={`${poppins.className} font-bold text-3xl md:text-4xl mb-7`}>
-            {name}
-          </h2>
-          <p className=" font-bold text-2xl text-green-600 mb-6"> ৳{price}</p>
+        <div className="flex flex-col">
+          {" "}
+          <div className="mx-auto">
+            <h2
+              className={`${poppins.className} font-bold text-3xl md:text-4xl mb-7`}
+            >
+              {name}
+            </h2>
+            <p className=" font-bold text-2xl text-green-600 mb-6"> ৳{price}</p>
+            <div>
+              {/* 1 */}
+              <h2 className="flex items-center gap-15 mb-3">
+                <span className="flex items-center gap-2">
+                  <GiCow className="text-4xl text-[#24a80f]" />{" "}
+                  <span className="text-lg font-semibold">Type:</span>
+                </span>
+                <span className="text-lg font-semibold text-[#373f3fde]">
+                  {" "}
+                  {type}
+                </span>
+              </h2>
+
+              {/* 2 */}
+              <h2 className="flex items-center gap-15 mb-3">
+                <span className="flex items-center gap-2">
+                  {/* <LuCalendarClock className="text-4xl text-green-500" /> */}
+                  <Image
+                    src={breeding}
+                    width={28}
+                    height={28}
+                    alt="breeding icon"
+                  />
+
+                  <span className="text-lg font-semibold">Breed:</span>
+                </span>
+                <span className="text-lg font-semibold text-[#373f3fde]">
+                  {" "}
+                  {breed}
+                </span>
+              </h2>
+
+              {/* 3 */}
+              <h2 className="flex items-center gap-13 mb-3">
+                <span className="flex items-center gap-2">
+                  <LuWeight className="text-2xl text-[#24a80f]" />{" "}
+                  <span className="text-lg font-semibold">Weight:</span>
+                </span>
+                <span className="text-lg font-semibold text-[#373f3fde]">
+                  {" "}
+                  {weight}
+                </span>
+              </h2>
+
+              {/* 4 */}
+              <h2 className="flex items-center gap-20 mb-3">
+                <span className="flex items-center gap-2">
+                  <LuCalendarClock className="text-2xl text-green-500" />{" "}
+                  <span className="text-lg font-semibold">Age:</span>
+                </span>
+                <span className="text-lg font-semibold text-[#373f3fde]">
+                  {" "}
+                  {age}
+                </span>
+              </h2>
+
+              {/* 5 */}
+              <h2 className="flex items-center gap-10 mb-3">
+                <span className="flex items-center gap-2">
+                  <CiLocationOn className="text-2xl text-green-500" />{" "}
+                  <span className="text-lg font-semibold">Location:</span>
+                </span>
+                <span className="text-lg font-semibold text-[#373f3fde]">
+                  {" "}
+                  {location}
+                </span>
+              </h2>
+
+              {/* 6 */}
+              <h2 className="flex items-center gap-10 mb-3">
+                <span className="flex items-center gap-2">
+                  <MdOutlineCategory className="text-2xl text-green-500" />{" "}
+                  <span className="text-lg font-semibold">Category:</span>
+                </span>
+                <span className="text-lg font-semibold text-[#373f3fde]">
+                  {" "}
+                  {category}
+                </span>
+              </h2>
+            </div>
+          </div>
+          {/* description */}
           <div>
-            {/* 1 */}
-            <h2 className="flex items-center gap-15 mb-3">
-              <span className="flex items-center gap-2">
-                <GiCow className="text-4xl text-[#24a80f]" />{" "}
-                <span className="text-lg font-semibold">Type:</span>
-              </span>
-              <span className="text-lg font-semibold text-[#373f3fde]">
-                {" "}
-                {type}
-              </span>
-            </h2>
-
-            {/* 2 */}
-            <h2 className="flex items-center gap-15 mb-3">
-              <span className="flex items-center gap-2">
-                {/* <LuCalendarClock className="text-4xl text-green-500" /> */}
-                <Image
-                  src={breeding}
-                  width={28}
-                  height={28}
-                  alt="breeding icon"
-                />
-
-                <span className="text-lg font-semibold">Breed:</span>
-              </span>
-              <span className="text-lg font-semibold text-[#373f3fde]">
-                {" "}
-                {breed}
-              </span>
-            </h2>
-
-            {/* 3 */}
-            <h2 className="flex items-center gap-13 mb-3">
-              <span className="flex items-center gap-2">
-                <LuWeight className="text-2xl text-[#24a80f]" />{" "}
-                <span className="text-lg font-semibold">Weight:</span>
-              </span>
-              <span className="text-lg font-semibold text-[#373f3fde]">
-                {" "}
-                {weight}
-              </span>
-            </h2>
-
-            {/* 4 */}
-            <h2 className="flex items-center gap-20 mb-3">
-              <span className="flex items-center gap-2">
-                <LuCalendarClock className="text-2xl text-green-500" />{" "}
-                <span className="text-lg font-semibold">Age:</span>
-              </span>
-              <span className="text-lg font-semibold text-[#373f3fde]">
-                {" "}
-                {age}
-              </span>
-            </h2>
-
-            {/* 5 */}
-            <h2 className="flex items-center gap-10 mb-3">
-              <span className="flex items-center gap-2">
-                <CiLocationOn className="text-2xl text-green-500" />{" "}
-                <span className="text-lg font-semibold">Location:</span>
-              </span>
-              <span className="text-lg font-semibold text-[#373f3fde]">
-                {" "}
-                {location}
-              </span>
-            </h2>
-
-            {/* 6 */}
-            <h2 className="flex items-center gap-10 mb-3">
-              <span className="flex items-center gap-2">
-                <MdOutlineCategory className="text-2xl text-green-500" />{" "}
-                <span className="text-lg font-semibold">Category:</span>
-              </span>
-              <span className="text-lg font-semibold text-[#373f3fde]">
-                {" "}
-                {category}
-              </span>
-            </h2>
+            <h2 className="font-bold text-xl mb-5">Description:</h2>
+            <p className="text-[#665c5c]">{ description}</p>
           </div>
         </div>
         {/* right content */}
