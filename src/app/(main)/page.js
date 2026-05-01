@@ -1,5 +1,6 @@
 import Banner from "@/components/Homepage/Banner";
 import FeaturedAnimals from "@/components/Homepage/FeaturedAnimals";
+import QurbaniTips from "@/components/Homepage/QurbaniTips";
 import Image from "next/image";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <div>
       <Banner />
       <FeaturedAnimals />
+      <QurbaniTips />
 </div>
   );
 }
