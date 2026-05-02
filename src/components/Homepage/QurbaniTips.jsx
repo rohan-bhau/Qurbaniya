@@ -2,7 +2,8 @@ import cow from "@/assets/cow.png";
 import calender from "@/assets/calendar.png";
 import balance from "@/assets/balance.png";
 import Image from "next/image";
-import { poppins } from "@/app/layout";
+import { poppins } from "@/fonts/font";
+
 
 const QurbaniTips = () => {
   return (

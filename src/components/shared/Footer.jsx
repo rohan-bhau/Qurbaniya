@@ -1,5 +1,6 @@
-import { playfair } from "@/app/layout";
+
 import footer from "@/assets/footer.png";
+import { playfair } from "@/fonts/font";
 import Image from "next/image";
 import Link from "next/link";
 import { CiLocationOn } from "react-icons/ci";

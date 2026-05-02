@@ -1,6 +1,7 @@
 import { getAnimals } from "@/data/AnimalsData";
 import AnimalCard from "../shared/AnimalCard";
-import { poppins } from "@/app/layout";
+import { poppins } from "@/fonts/font";
+
 
 const FeaturedAnimals = async () => {
   const animals = await getAnimals();

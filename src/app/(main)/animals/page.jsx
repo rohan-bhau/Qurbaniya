@@ -1,9 +1,10 @@
-import { playfair, poppins } from "@/app/layout";
+
 import AnimalCard from "@/components/shared/AnimalCard";
 import AnimalList from "@/components/shared/AnimalList";
 import AnimalSkeleton from "@/components/shared/AnimalSkeleton";
 import Sorting from "@/components/shared/Sorting";
 import { getAnimals } from "@/data/AnimalsData";
+import { playfair } from "@/fonts/font";
 import { Tabs } from "@heroui/react";
 import React, { Suspense } from "react";
 

@@ -1,4 +1,4 @@
-import { poppins } from "@/app/layout";
+
 import { getAnimals } from "@/data/AnimalsData";
 import Image from "next/image";
 import React from "react";
@@ -9,6 +9,7 @@ import breeding from "@/assets/breeding.png";
 import { CiLocationOn } from "react-icons/ci";
 import { MdOutlineCategory } from "react-icons/md";
 import { BookingForm } from "@/components/shared/BookingForm";
+import { poppins } from "@/fonts/font";
 
 const AnimalDetailPage = async ({ params }) => {
   // "id": "15",

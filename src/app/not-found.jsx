@@ -1,7 +1,8 @@
 import notFound from '@/assets/not-found.png';
 import Link from 'next/link';
-import { inter, poppins } from './layout';
+
 import { Button } from '@heroui/react';
+import { poppins } from '@/fonts/font';
 
 const NotFoundPage = () => {
   return (

@@ -1,6 +1,7 @@
-import { poppins } from "@/app/layout";
+
 import banner from "@/assets/banner.png";
 import bannerImage from "@/assets/bannerImage.png";
+import { poppins } from "@/fonts/font";
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";

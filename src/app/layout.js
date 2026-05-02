@@ -1,20 +1,6 @@
-import {  Inter, Playfair_Display, Poppins } from "next/font/google";
 import "./globals.css";
+import { inter, playfair, poppins } from "@/fonts/font";
 
-export const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
-
-export const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400","500", "600", "700"],
-  variable: "--font-poppins",
-});
-export const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "Qurbaniya",
@@ -25,9 +11,11 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={` h-full antialiased`}
+      className={`${inter.className} ${poppins.className} ${playfair.className} h-full antialiased`}
     >
-      <body className={`${inter.className} min-h-full flex flex-col`}>{children}</body>
+      <body className={`${inter.className} min-h-full flex flex-col`}>
+        {children}
+      </body>
     </html>
   );
 }
