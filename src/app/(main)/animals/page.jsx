@@ -4,22 +4,16 @@ import AnimalList from "@/components/shared/AnimalList";
 import AnimalSkeleton from "@/components/shared/AnimalSkeleton";
 import Sorting from "@/components/shared/Sorting";
 import { getAnimals } from "@/data/AnimalsData";
-import { playfair } from "@/fonts/font";
+import { playfair, poppins } from "@/fonts/font";
 import { Tabs } from "@heroui/react";
 import React, { Suspense } from "react";
 
 const AnimalsPage = async ({ searchParams }) => {
   // const sortOrder = await searchParams
   const sortOrder = (await searchParams).sort || "";
-  console.log(sortOrder)
+  // console.log(sortOrder)
   const data = await getAnimals();
   // console.log(data);
-  // const cows = data.filter((animal) => animal.type === "Cow");
-  // // console.log(cows)
-  // const goats = data.filter((animal) => animal.type === "Goat");
-  // console.log(goats)
-  // const sheep = data.filter((animal) => animal.type === "Sheep");
-  // console.log(sheep)
   return (
     <div className="bg-[#f7fbff] py-15">
       <div className="container mx-auto ">

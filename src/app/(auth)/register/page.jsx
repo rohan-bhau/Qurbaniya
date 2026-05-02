@@ -9,6 +9,7 @@ import {
   InputGroup,
   Label,
   Separator,
+  Spinner,
   TextField,
 } from "@heroui/react";
 import Link from "next/link";
@@ -17,16 +18,47 @@ import Image from "next/image";
 import { playfair, poppins } from "@/fonts/font";
 import { FcGoogle } from "react-icons/fc";
 import { BsPersonFillAdd } from "react-icons/bs";
+import { useForm } from "react-hook-form";
+import { authClient } from "@/lib/auth-clinet";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 const RegisterPage = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [loading, setLoading] = useState(false)
+  const router = useRouter()
+    const { register, handleSubmit } = useForm();
 
 
   const onSubmit = async (data) => {
-    
+    setLoading(true)
+    console.log(data)
+    const {name, email, image, password}=data
+
+
+    const { data:res, error } = await authClient.signUp.email({
+      name: name, // required
+      email: email, // required
+      password: password, // required
+      image: image,
+      // callbackURL: "/",
+    });
+
+    console.log(res, error)
+
+    if (error) {
+      toast.error(`${error.message}`);
+      setLoading(false)
+    }
+    if (res) {
+      toast.info("SignUp Successfull!")
+      //  setTimeout(() => {
+         router.push("/");
+      //  }, 1500);
+    }
   };
   return (
-    <div className=" flex justify-center items-center min-h-screen px-5">
+    <div className=" flex justify-center items-center min-h-screen px-5 py-5">
       <div className="bg-[#fdfdfd]  px-5 py-12 rounded-lg border w-full max-w-[450px]">
         <div className="flex justify-center items-center mb-2 p-4 rounded-full w-fit mx-auto bg-[#ecf4ef]">
           <BsPersonFillAdd className="text-7xl text-[#036832]" />
@@ -36,7 +68,10 @@ const RegisterPage = () => {
         >
           Create An Account
         </h2>{" "}
-        <Form className="flex w-full flex-col gap-4" onSubmit={onSubmit}>
+        <Form
+          className="flex w-full flex-col gap-4"
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <TextField
             isRequired
             name="name"
@@ -48,7 +83,7 @@ const RegisterPage = () => {
             }}
           >
             <Label className="text-md">Name</Label>
-            <Input placeholder="John Doe" />
+            <Input {...register("name")} className={"rounded-md"} placeholder="John Doe" />
             <FieldError />
           </TextField>
 
@@ -66,24 +101,18 @@ const RegisterPage = () => {
             }}
           >
             <Label className="text-md">Email Address</Label>
-            <Input className={"rounded-md"} placeholder="john@example.com" />
+            <Input
+              {...register("email")}
+              className={"rounded-md"}
+              placeholder="john@example.com"
+            />
             <FieldError />
           </TextField>
 
           {/* image url */}
-          <TextField
-            name="name"
-            className="w-full"
-            validate={(value) => {
-              if (value !== "https://") {
-                return "Please Enter a valid Image URL";
-              }
-              return null;
-            }}
-          >
+          <TextField name="image" className="w-full">
             <Label>Photo URL</Label>
-            <Input placeholder="https://example.com" />
-            <FieldError />
+            <Input {...register("image")} className={"rounded-md"} placeholder="https://example.com" />
           </TextField>
 
           {/* password */}
@@ -107,7 +136,8 @@ const RegisterPage = () => {
             <Label className="text-md">Password</Label>
             <InputGroup>
               <InputGroup.Input
-                className="w-full "
+                className="w-full rounded-md"
+                {...register("password")}
                 type={isVisible ? "text" : "password"}
                 placeholder="Enter Your Password"
               />
@@ -135,11 +165,13 @@ const RegisterPage = () => {
 
           {/*  button */}
           <Button
-            className="w-full py-4 text-lg rounded-lg bg-[#036832]  hover:bg-[#03582b]"
-            type="submit"
-          >
-            Register
-          </Button>
+  type="submit"
+  disabled={loading}
+  className="w-full py-4 text-lg rounded-lg bg-[#036832] hover:bg-[#03582b] flex items-center justify-center gap-2"
+>
+  {loading && <Spinner size="sm" color="white" />}
+  {loading ? "Creating..." : "Register"}
+</Button>
 
           <div className="grid grid-cols-4 gap-3 mb-3">
             <Separator

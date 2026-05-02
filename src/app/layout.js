@@ -1,3 +1,4 @@
+import { ToastContainer } from "react-toastify";
 import "./globals.css";
 import { inter, playfair, poppins } from "@/fonts/font";
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
     >
       <body className={`${inter.className} min-h-full flex flex-col`}>
         {children}
+        <ToastContainer />
       </body>
     </html>
   );

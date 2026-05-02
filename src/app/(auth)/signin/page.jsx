@@ -9,6 +9,7 @@ import {
   InputGroup,
   Label,
   Separator,
+  Spinner,
   TextField,
 } from "@heroui/react";
 import Link from "next/link";
@@ -17,17 +18,39 @@ import login from '@/assets/login.png';
 import Image from "next/image";
 import { playfair, poppins } from "@/fonts/font";
 import { FcGoogle } from "react-icons/fc";
+import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
 
 const SignInPage = () => {
+  const { register, handleSubmit } = useForm();
   const [isVisible, setIsVisible] = useState(false);
-
+  const [loading, setLoading] = useState(false)
+const router = useRouter()
 
   const onSubmit = async (data) => {
-    
+    setLoading(true)
+    console.log(data)
+    const {email, password}=data
+
+
+    const { data:res, error } = await authClient.signIn.email({
+      email: email, // required
+      password: password, // required
+      rememberMe: true,
+      callbackURL: "/",
+    });
+    if (error) {
+      toast.error(error.message)
+      setLoading(false)
+    }
+    if (res) {
+      toast.info(`Login successfull`);
+       router.push("/");
+    }
   };
   return (
-    <div className=" flex justify-center items-center h-screen px-5">
-      <div className="bg-[#fdfdfd]  px-5 py-12 rounded-lg border">
+    <div className=" flex justify-center items-center min-h-screen px-5 py-5">
+      <div className="bg-[#fdfdfd]  px-5 py-12 rounded-lg border max-w-[450px]">
         <div className="flex justify-center items-center mb-2">
           <Image src={login} width={80} height={80} alt="logo" />
         </div>
@@ -36,7 +59,10 @@ const SignInPage = () => {
         >
           Login to Qurbaniya
         </h2>{" "}
-        <Form className="flex w-full flex-col gap-4" onSubmit={onSubmit}>
+        <Form
+          className="flex w-full flex-col gap-4"
+          onSubmit={handleSubmit(onSubmit)}
+        >
           {/* email */}
           <TextField
             isRequired
@@ -50,7 +76,7 @@ const SignInPage = () => {
             }}
           >
             <Label className="text-md">Email Address</Label>
-            <Input placeholder="john@example.com" />
+            <Input {...register("email")} placeholder="john@example.com" />
             <FieldError />
           </TextField>
 
@@ -76,6 +102,7 @@ const SignInPage = () => {
             <InputGroup>
               <InputGroup.Input
                 className="w-full "
+                {...register("password")}
                 type={isVisible ? "text" : "password"}
                 placeholder="Enter Your Password"
               />
@@ -103,10 +130,12 @@ const SignInPage = () => {
 
           {/* submit and reset button */}
           <Button
-            className="w-full py-4 text-lg rounded-lg bg-[#036832]  hover:bg-[#03582b]"
             type="submit"
+            disabled={loading}
+            className="w-full py-4 text-lg rounded-lg bg-[#036832] hover:bg-[#03582b] flex items-center justify-center gap-2"
           >
-            Login
+            {loading && <Spinner size="sm" color="white" />}
+            {loading ? "Logging..." : "LogIn"}
           </Button>
 
           <div className="grid grid-cols-4 gap-3 mb-3">
@@ -121,12 +150,20 @@ const SignInPage = () => {
             />
           </div>
 
-          <Button variant="outline" className="border w-full  py-3 flex items-center justify-center hover:bg-[#036832] hover:text-[#ffffff] cursor-pointer rounded-lg font-semibold transition gap-3 mb-3">
+          <Button
+            variant="outline"
+            className="border w-full  py-3 flex items-center justify-center hover:bg-[#036832] hover:text-[#ffffff] cursor-pointer rounded-lg font-semibold transition gap-3 mb-3"
+          >
             <FcGoogle className="text-2xl" />
             <p>Continue with Google</p>
           </Button>
 
-          <p className="text-sm text-center">Don't have an account? <Link href={"/register"} className="font-semibold text-[#036832]">Register</Link></p>
+          <p className="text-sm text-center">
+            Don't have an account?{" "}
+            <Link href={"/register"} className="font-semibold text-[#036832]">
+              Register
+            </Link>
+          </p>
         </Form>
       </div>
     </div>
