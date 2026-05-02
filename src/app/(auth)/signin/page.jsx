@@ -20,6 +20,8 @@ import { playfair, poppins } from "@/fonts/font";
 import { FcGoogle } from "react-icons/fc";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
+import { authClient } from "@/lib/auth-clinet";
+import { toast } from "react-toastify";
 
 const SignInPage = () => {
   const { register, handleSubmit } = useForm();
