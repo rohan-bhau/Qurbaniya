@@ -57,6 +57,13 @@ const RegisterPage = () => {
       //  }, 1500);
     }
   };
+
+  const handleGoogleSignIn = async() => {
+     const data = await authClient.signIn.social({
+    provider: "google",
+     });
+    router.push("/")
+  }
   return (
     <div className=" flex justify-center items-center min-h-screen px-5 py-5">
       <div className="bg-[#fdfdfd]  px-5 py-12 rounded-lg border w-full max-w-[450px]">
@@ -83,7 +90,11 @@ const RegisterPage = () => {
             }}
           >
             <Label className="text-md">Name</Label>
-            <Input {...register("name")} className={"rounded-md"} placeholder="John Doe" />
+            <Input
+              {...register("name")}
+              className={"rounded-md"}
+              placeholder="John Doe"
+            />
             <FieldError />
           </TextField>
 
@@ -112,7 +123,11 @@ const RegisterPage = () => {
           {/* image url */}
           <TextField name="image" className="w-full">
             <Label>Photo URL</Label>
-            <Input {...register("image")} className={"rounded-md"} placeholder="https://example.com" />
+            <Input
+              {...register("image")}
+              className={"rounded-md"}
+              placeholder="https://example.com"
+            />
           </TextField>
 
           {/* password */}
@@ -165,13 +180,13 @@ const RegisterPage = () => {
 
           {/*  button */}
           <Button
-  type="submit"
-  disabled={loading}
-  className="w-full py-4 text-lg rounded-lg bg-[#036832] hover:bg-[#03582b] flex items-center justify-center gap-2"
->
-  {loading && <Spinner size="sm" color="white" />}
-  {loading ? "Creating..." : "Register"}
-</Button>
+            type="submit"
+            disabled={loading}
+            className="w-full py-4 text-lg rounded-lg bg-[#036832] hover:bg-[#03582b] flex items-center justify-center gap-2"
+          >
+            {loading && <Spinner size="sm" color="white" />}
+            {loading ? "Creating..." : "Register"}
+          </Button>
 
           <div className="grid grid-cols-4 gap-3 mb-3">
             <Separator
@@ -186,6 +201,7 @@ const RegisterPage = () => {
           </div>
 
           <Button
+            onClick={handleGoogleSignIn}
             variant="outline"
             className="border w-full  py-3 flex items-center justify-center hover:bg-[#036832] hover:text-[#ffffff] cursor-pointer rounded-lg font-semibold transition gap-3 mb-3"
           >

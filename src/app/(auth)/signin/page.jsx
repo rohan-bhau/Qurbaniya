@@ -50,6 +50,13 @@ const router = useRouter()
        router.push("/");
     }
   };
+
+ const handleGoogleSignIn = async () => {
+   const data = await authClient.signIn.social({
+     provider: "google",
+   });
+   router.push("/")
+ };
   return (
     <div className=" flex justify-center items-center min-h-screen px-5 py-5">
       <div className="bg-[#fdfdfd]  px-5 py-12 rounded-lg border max-w-[450px]">
@@ -153,11 +160,14 @@ const router = useRouter()
           </div>
 
           <Button
+            onClick={handleGoogleSignIn}
             variant="outline"
-            className="border w-full  py-3 flex items-center justify-center hover:bg-[#036832] hover:text-[#ffffff] cursor-pointer rounded-lg font-semibold transition gap-3 mb-3"
+            className="border w-full  py-3  hover:bg-[#036832] hover:text-[#ffffff] cursor-pointer rounded-lg font-semibold transition  mb-3"
           >
-            <FcGoogle className="text-2xl" />
-            <p>Continue with Google</p>
+            <div className="flex items-center justify-center gap-3">
+              <FcGoogle className="text-2xl" />
+              <p>Continue with Google</p>
+            </div>
           </Button>
 
           <p className="text-sm text-center">
