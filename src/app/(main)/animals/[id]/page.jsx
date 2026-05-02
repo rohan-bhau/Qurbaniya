@@ -40,7 +40,7 @@ const AnimalDetailPage = async ({ params }) => {
     location,
     description,
   } = data;
-  console.log(data);
+  // console.log(data);
   return (
     <div className="py-15 px-5 md:px-10">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">

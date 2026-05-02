@@ -6,7 +6,7 @@ import { poppins } from "@/app/layout";
 
 const QurbaniTips = () => {
   return (
-    <div className="bg-[#f6f9fe] pb-15">
+    <div className="bg-[#f6f9fe] pb-15 ">
       <div className="container mx-auto px-5 md:px-7">
         {" "}
         <h2
@@ -16,7 +16,10 @@ const QurbaniTips = () => {
         </h2>
         <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
           {/* 1 */}
-          <div className="bg-[#ffff] border shadow rounded-lg p-5 flex items-center gap-8">
+          <div
+            className="bg-[#ffff] border shadow rounded-lg p-5 flex items-center gap-8 over:shadow-xl hover:-translate-y-1 
+  transition-all duration-300 "
+          >
             <div className="bg-[#03612d] w-25 h-25 rounded-full flex justify-center items-center p-3">
               <Image
                 src={cow}
@@ -37,7 +40,10 @@ const QurbaniTips = () => {
             </div>
           </div>
           {/* 2 */}
-          <div className="bg-[#ffff] border shadow rounded-lg p-5 flex items-center gap-8">
+          <div
+            className="bg-[#ffff] border shadow rounded-lg p-5 flex items-center gap-8 over:shadow-xl hover:-translate-y-1 
+  transition-all duration-300 "
+          >
             <div className="bg-[#03612d] w-25 h-25 rounded-full flex justify-center items-center p-3">
               <Image
                 src={calender}
@@ -58,7 +64,10 @@ const QurbaniTips = () => {
             </div>
           </div>
           {/* 3 */}
-          <div className="bg-[#ffff] border shadow rounded-lg p-5 flex items-center gap-8">
+          <div
+            className="bg-[#ffff] border shadow rounded-lg p-5 flex items-center gap-8 over:shadow-xl hover:-translate-y-1 
+  transition-all duration-300 "
+          >
             <div className="bg-[#03612d] w-25 h-25 rounded-full flex justify-center items-center p-3">
               <Image
                 src={balance}

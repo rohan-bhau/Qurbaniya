@@ -8,8 +8,8 @@ const FeaturedAnimals = async () => {
   const featuredAnimalsData = animals.filter(
     (animal) => animal.featured === true,
   );
-  console.log(featuredAnimalsData);
-  console.log(animals);
+  // console.log(featuredAnimalsData);
+  // console.log(animals);
   return (
     <div className="py-15 bg-[#f7fafe]">
       <div className="container mx-auto px-5 md:px-7">

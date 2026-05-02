@@ -1,13 +1,17 @@
-import { playfair, poppins } from '@/app/layout';
-import AnimalCard from '@/components/shared/AnimalCard';
-import AnimalList from '@/components/shared/AnimalList';
-import AnimalSkeleton from '@/components/shared/AnimalSkeleton';
-import { getAnimals } from '@/data/AnimalsData';
-import { Tabs } from '@heroui/react';
-import React, { Suspense } from 'react'
+import { playfair, poppins } from "@/app/layout";
+import AnimalCard from "@/components/shared/AnimalCard";
+import AnimalList from "@/components/shared/AnimalList";
+import AnimalSkeleton from "@/components/shared/AnimalSkeleton";
+import Sorting from "@/components/shared/Sorting";
+import { getAnimals } from "@/data/AnimalsData";
+import { Tabs } from "@heroui/react";
+import React, { Suspense } from "react";
 
-const AnimalsPage = async() => {
-  // const data = await getAnimals();
+const AnimalsPage = async ({ searchParams }) => {
+  // const sortOrder = await searchParams
+  const sortOrder = (await searchParams).sort || "";
+  console.log(sortOrder)
+  const data = await getAnimals();
   // console.log(data);
   // const cows = data.filter((animal) => animal.type === "Cow");
   // // console.log(cows)
@@ -24,6 +28,10 @@ const AnimalsPage = async() => {
         >
           Find Your Perfect Qurbani Animal
         </h2>
+        {/* sorting */}
+        <div className="md:flex justify-end p-5 ">
+          <Sorting></Sorting>
+        </div>
 
         {/* cows */}
         <div className="px-5 md:px-15 lg:px-20 pt-5 ">
@@ -33,7 +41,7 @@ const AnimalsPage = async() => {
             Cows
           </h2>
           <Suspense fallback={<AnimalSkeleton />}>
-            <AnimalList type="Cow" />
+            <AnimalList animalsData={data} type="Cow" sortOrder={sortOrder} />
           </Suspense>
         </div>
 
@@ -45,7 +53,7 @@ const AnimalsPage = async() => {
             Goats
           </h2>
           <Suspense fallback={<AnimalSkeleton />}>
-            <AnimalList type="Goat" />
+            <AnimalList animalsData={data} type="Goat" sortOrder={sortOrder} />
           </Suspense>
         </div>
 
@@ -57,12 +65,12 @@ const AnimalsPage = async() => {
             Sheep
           </h2>
           <Suspense fallback={<AnimalSkeleton />}>
-            <AnimalList type="Sheep" />
+            <AnimalList animalsData={data} type="Sheep" sortOrder={sortOrder} />
           </Suspense>
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default AnimalsPage
+export default AnimalsPage;
