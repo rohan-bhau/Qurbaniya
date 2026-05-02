@@ -62,6 +62,7 @@ const RegisterPage = () => {
      const data = await authClient.signIn.social({
     provider: "google",
      });
+    toast.info("SignUp successfull");
     router.push("/")
   }
   return (

@@ -55,7 +55,9 @@ const router = useRouter()
    const data = await authClient.signIn.social({
      provider: "google",
    });
+   toast.info("Login successfull");
    router.push("/")
+   
  };
   return (
     <div className=" flex justify-center items-center min-h-screen px-5 py-5">
