@@ -9,7 +9,7 @@ import { authClient } from "@/lib/auth-clinet";
 const Navbar = () => {
   const { data: session , isPending} = authClient.useSession();
   const user = session?.user
-  console.log(user)
+  // console.log(user)
   return (
     <div className=" bg-[#ffffff] border-2">
       {" "}
@@ -43,7 +43,10 @@ const Navbar = () => {
                 </Avatar.Fallback>
               </Avatar>
 
-              <Button className="bg-transparent hover:bg-red-50 text-gray-600 hover:text-red-500 rounded-lg text-md">
+              <Button
+                className="bg-transparent hover:bg-red-50 text-gray-600 hover:text-red-500 rounded-lg text-md"
+                onClick={async () => await authClient.signOut()}
+              >
                 LogOut
               </Button>
             </>

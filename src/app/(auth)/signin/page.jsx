@@ -61,7 +61,7 @@ const router = useRouter()
  };
   return (
     <div className=" flex justify-center items-center min-h-screen px-5 py-5">
-      <div className="bg-[#fdfdfd]  px-5 py-12 rounded-lg border max-w-[450px]">
+      <div className="bg-[#fdfdfd]  px-5 py-12 rounded-lg border w-full max-w-[450px]">
         <div className="flex justify-center items-center mb-2">
           <Image src={login} width={80} height={80} alt="logo" />
         </div>
@@ -79,6 +79,7 @@ const router = useRouter()
             isRequired
             name="email"
             type="email"
+            className={"w-full"}
             validate={(value) => {
               if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
                 return "Please enter a valid email address";
