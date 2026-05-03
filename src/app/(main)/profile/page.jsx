@@ -5,8 +5,12 @@ import cover from "@/assets/cover.png";
 
 import { Avatar, Skeleton, Spinner } from "@heroui/react";
 import { authClient } from "@/lib/auth-clinet";
+// import UpdateProfileModal from "@/components/shared/UpdateProfile";
+import { useState } from "react";
+import UpdateProfile from "@/components/shared/UpdateProfile";
 
 export default function ProfilePage() {
+  const [isOpen, setIsOpen] = useState(false);
   const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
 
@@ -40,19 +44,17 @@ export default function ProfilePage() {
       >
         <div className="flex items-center gap-4">
           <div className="w-24 h-24 rounded-full flex items-center justify-center">
-
             {user.image ? (
               <Image
                 src={user.image}
                 alt="profile"
                 width={80}
                 height={80}
-                className="rounded-full border-4 border-white shadow-md object-cover"
-
+                className="rounded-full w-24 h-24 border-4 border-white shadow-md object-cover"
               />
             ) : (
               <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-to-br from-pink-500 to-purple-500 text-white text-xl font-bold border-4 border-white shadow-md">
-                {user?.name.slice(0,2).toUpperCase()}
+                {user?.name.slice(0, 2).toUpperCase()}
               </div>
             )}
           </div>
@@ -73,7 +75,10 @@ export default function ProfilePage() {
             <li className="text-green-600 font-semibold cursor-pointer">
               My Profile
             </li>
-            <li className="text-gray-600 hover:text-green-600 cursor-pointer transition">
+            <li
+              className="text-gray-600 hover:text-green-600 cursor-pointer transition"
+              onClick={() => setIsOpen(true)}
+            >
               Update Info
             </li>
           </ul>
@@ -104,7 +109,6 @@ export default function ProfilePage() {
               <div>
                 <p className="text-sm text-gray-500">Phone</p>
                 <h4 className="font-semibold text-gray-800">
-
                   {user?.phone || "Not Updated"}
                 </h4>
               </div>
@@ -112,13 +116,15 @@ export default function ProfilePage() {
               <div>
                 <p className="text-sm text-gray-500">Location</p>
                 <h4 className="font-semibold text-gray-800">
-                  
                   {user?.location || "Not Updated"}
                 </h4>
               </div>
             </div>
 
-            <button className="mt-6 px-5 py-2 bg-green-600 text-white rounded-xl hover:bg-green-700 cursor-pointer">
+            <button
+              onClick={() => setIsOpen(true)}
+              className="mt-6 px-5 py-2 bg-green-600 text-white rounded-xl hover:bg-green-700 cursor-pointer"
+            >
               Update Profile
             </button>
           </div>
@@ -147,6 +153,8 @@ export default function ProfilePage() {
           </div>
         </div>
       </div>
+      {/* <UpdateProfileModal isOpen={isOpen} setIsOpen={setIsOpen} user={user} /> */}
+      <UpdateProfile isOpen={isOpen} setIsOpen={setIsOpen} user={user} />
     </div>
   );
 }
