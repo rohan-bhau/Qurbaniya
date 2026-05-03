@@ -46,12 +46,6 @@ export function NavMenu() {
           <li>
             <NavLink href={"/about-us"}>About Us</NavLink>
           </li>
-          <li>
-            <NavLink href={""}>Blogs</NavLink>
-          </li>
-          <li>
-            <NavLink href={""}>FAQS</NavLink>
-          </li>
         </ul>
       </div>
       <div className="lg:hidden">
