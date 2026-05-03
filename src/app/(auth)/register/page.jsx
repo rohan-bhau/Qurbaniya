@@ -41,7 +41,7 @@ const RegisterPage = () => {
       email: email, // required
       password: password, // required
       image: image,
-      // callbackURL: "/",
+      callbackURL: "/signin",
     });
 
     console.log(res, error)
@@ -51,9 +51,9 @@ const RegisterPage = () => {
       setLoading(false)
     }
     if (res) {
-      toast.info("SignUp Successfull!")
+      toast.info("SignUp Successfull, please login to your account!");
       //  setTimeout(() => {
-         router.push("/");
+         router.push("/signin");
       //  }, 1500);
     }
   };

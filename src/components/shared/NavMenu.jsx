@@ -16,9 +16,12 @@ import {
   IoInformationCircleOutline,
   IoNewspaperOutline,
 } from "react-icons/io5";
+import { authClient } from "@/lib/auth-clinet";
 
 export function NavMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const { data: session } = authClient.useSession();
+  const user = session?.user;
   const navItems = [
     { icon: House, path: "/", label: "Home" },
     { icon: Person, path: "/profile", label: "Profile" },
@@ -74,9 +77,18 @@ export function NavMenu() {
                   <div className="flex justify-between items-center">
                     <p>Hello, welcome to Qurbaniya!</p>
 
-                    <Button className="font-semibold bg-orange-500 rounded-md">
-                      <Link href={"/signin"}>Sign In / Register</Link>
-                    </Button>
+                    {user ? (
+                      <Button
+                        className="bg-transparent hover:bg-red-50 text-gray-600 hover:text-red-500 rounded-lg text-md"
+                        onClick={async () => await authClient.signOut()}
+                      >
+                        LogOut
+                      </Button>
+                    ) : (
+                      <Button className="font-semibold bg-orange-500 rounded-md">
+                        <Link href={"/signin"}>Sign In / Register</Link>
+                      </Button>
+                    )}
                   </div>
                   <nav className="flex flex-col gap-1">
                     {navItems.map((item) => (

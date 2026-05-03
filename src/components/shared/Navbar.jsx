@@ -28,7 +28,7 @@ const Navbar = () => {
           <NavMenu />
         </div>
         {/* button */}
-        <div className="flex items-center gap-3 min-w-[160px] justify-end">
+        <div className="hidden lg:flex items-center gap-3 min-w-[160px] justify-end">
           {isPending ? (
             <>
               <Skeleton className="w-10 h-10 rounded-full" />
@@ -36,12 +36,14 @@ const Navbar = () => {
             </>
           ) : user ? (
             <>
-              <Avatar>
-                <Avatar.Image src={user?.image || ""} alt={user?.name} />
-                <Avatar.Fallback className="border-none bg-gradient-to-br from-pink-500 to-purple-500 text-white">
-                  {user.name.slice(0, 2).toUpperCase()}
-                </Avatar.Fallback>
-              </Avatar>
+              <Link href={"/profile"}>
+                <Avatar>
+                  <Avatar.Image src={user?.image || ""} alt={user?.name} />
+                  <Avatar.Fallback className="border-none bg-gradient-to-br from-pink-500 to-purple-500 text-white">
+                    {user.name.slice(0, 2).toUpperCase()}
+                  </Avatar.Fallback>
+                </Avatar>
+              </Link>
 
               <Button
                 className="bg-transparent hover:bg-red-50 text-gray-600 hover:text-red-500 rounded-lg text-md"
