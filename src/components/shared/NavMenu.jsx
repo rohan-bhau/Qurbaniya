@@ -36,7 +36,7 @@ export function NavMenu() {
     <div>
       {" "}
       <div className="hidden lg:flex">
-        <ul className="font-semibold text-lg flex gap-4">
+        <ul className="font-semibold text-md flex gap-4">
           <li>
             <NavLink href={"/"}>Home</NavLink>
           </li>
@@ -44,7 +44,7 @@ export function NavMenu() {
             <NavLink href={"/animals"}>Animals</NavLink>
           </li>
           <li>
-            <NavLink href={""}>About Us</NavLink>
+            <NavLink href={"/about-us"}>About Us</NavLink>
           </li>
           <li>
             <NavLink href={""}>Blogs</NavLink>

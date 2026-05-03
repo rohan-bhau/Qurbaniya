@@ -1,8 +1,7 @@
-import cow from "@/assets/cow.png";
-import calender from "@/assets/calendar.png";
-import balance from "@/assets/balance.png";
-import Image from "next/image";
+
 import { poppins } from "@/fonts/font";
+import { GiCow } from "react-icons/gi";
+import { FaBalanceScale, FaRegCalendarAlt } from "react-icons/fa";
 
 
 const QurbaniTips = () => {
@@ -21,14 +20,8 @@ const QurbaniTips = () => {
             className="bg-[#ffff] border shadow rounded-lg p-5 flex items-center gap-8 over:shadow-xl hover:-translate-y-1 
   transition-all duration-300 "
           >
-            <div className="bg-[#03612d] w-25 h-25 rounded-full flex justify-center items-center p-3">
-              <Image
-                src={cow}
-                width={23}
-                height={30}
-                alt="cow icon"
-                className="w-full h-full object-fit"
-              />
+            <div className="bg-[#03612d] w-25 h-20 rounded-full flex justify-center items-center ">
+              <GiCow className="text-[#ffffff] text-6xl" />
             </div>
             <div>
               {" "}
@@ -45,14 +38,8 @@ const QurbaniTips = () => {
             className="bg-[#ffff] border shadow rounded-lg p-5 flex items-center gap-8 over:shadow-xl hover:-translate-y-1 
   transition-all duration-300 "
           >
-            <div className="bg-[#03612d] w-25 h-25 rounded-full flex justify-center items-center p-3">
-              <Image
-                src={calender}
-                width={30}
-                height={30}
-                alt="cow icon"
-                className="w-full h-full"
-              />
+            <div className="bg-[#03612d] w-25 h-20 rounded-full flex justify-center items-center ">
+              <FaRegCalendarAlt className="text-[#ffffff] text-5xl" />
             </div>
             <div>
               {" "}
@@ -69,14 +56,8 @@ const QurbaniTips = () => {
             className="bg-[#ffff] border shadow rounded-lg p-5 flex items-center gap-8 over:shadow-xl hover:-translate-y-1 
   transition-all duration-300 "
           >
-            <div className="bg-[#03612d] w-25 h-25 rounded-full flex justify-center items-center p-3">
-              <Image
-                src={balance}
-                width={30}
-                height={30}
-                alt="cow icon"
-                className="w-full h-full"
-              />
+            <div className="bg-[#03612d] w-25 h-20 rounded-full flex justify-center items-center ">
+              <FaBalanceScale className="text-[#ffffff] text-6xl" />
             </div>
             <div>
               {" "}
