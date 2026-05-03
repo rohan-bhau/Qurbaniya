@@ -1,36 +1,174 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🐄 Qurbaniya – Livestock Booking Platform
 
-## Getting Started
+A modern, responsive livestock marketplace built for Qurbani, where users can explore animals, view details, and place bookings after authentication.
 
-First, run the development server:
+🔗 **Live Site:** https://qurbaniya-phi.vercel.app/
+📂 **Repository:** https://github.com/rohan-bhau/Qurbaniya
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🚀 Project Overview
+
+Qurbaniya is a single-page application designed to simplify the process of selecting and booking livestock (cows, goats, sheep) for Qurbani. The platform focuses on usability, clean UI, and smooth user experience with authentication and protected routes.
+
+---
+
+## 🎯 Core Features
+
+* 🔐 **Authentication System**
+
+  * Email & Password login/register
+  * Google Sign-in integration
+  * Protected routes (Details, Profile)
+
+* 🐄 **Animal Marketplace**
+
+  * Browse animals with detailed information
+  * Featured animals on homepage
+  * Category-based display (Cow, Goat, Sheep)
+
+* 📄 **Animal Details Page**
+
+  * Full animal information
+  * Booking form (with validation)
+  * Success toast (no DB storage as per requirement)
+
+* 📊 **All Animals Page**
+
+  * Sort animals by price
+  * Clean card-based UI
+
+* 👤 **User Profile System (Challenge Feature)**
+
+  * View user info (name, email, photo)
+  * Update profile (name & image)
+
+* 🔔 **UX Enhancements**
+
+  * Toast notifications
+  * Loading states
+  * Not-found (404) page
+  * Smooth animation using React Spring
+
+---
+
+## 🧱 Tech Stack
+
+**Frontend**
+
+* Next.js
+* JavaScript (ES6+)
+* Hero UI
+* React Icons
+* Gravity Icons
+
+**State & Forms**
+
+* React Hook Form
+
+**Authentication**
+
+* Better Auth
+* Google OAuth
+
+**Backend & Database**
+
+* MongoDB
+
+**Animation**
+
+* React Spring (used selectively)
+
+---
+
+## 📁 Project Structure (Simplified)
+
+```
+/src
+ ├── components
+ ├── pages / app
+ ├── hooks
+ ├── utils
+ ├── services
+ └── assets
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🔑 Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Make sure to configure the following:
 
-## Learn More
+```
+NEXT_PUBLIC_API_URL=
+MONGODB_URI=
+AUTH_SECRET=
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📱 Responsiveness
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Fully optimized for:
 
-## Deploy on Vercel
+* Mobile 📱
+* Tablet 📲
+* Desktop 💻
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🧪 How to Run Locally
+
+```bash
+# Clone repo
+git clone https://github.com/rohan-bhau/Qurbaniya.git
+
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+```
+
+---
+
+## ⚠️ Limitations (Intentional)
+
+* Booking data is **not stored** (as per assignment requirement)
+* No email verification or password reset implemented
+
+---
+
+## 🧠 Challenges Faced
+
+* Integrating Better Auth with protected routes
+* Managing authentication state across pages
+* Ensuring smooth UX with minimal animation (React Spring)
+* Keeping design clean without overcomplicating UI
+
+---
+
+## 📌 Future Improvements
+
+* Real booking system with database persistence
+* Payment integration
+* Advanced filtering (weight, location, breed)
+* Admin dashboard
+
+---
+
+## 👤 Author
+
+**Rohan Mia**
+
+* GitHub: https://github.com/rohan-bhau
+
+---
+
+## 📄 License
+
+This project is for educational purposes only.
+
+---
