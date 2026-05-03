@@ -20,8 +20,8 @@ const QurbaniTips = () => {
             className="bg-[#ffff] border shadow rounded-lg p-5 flex items-center gap-8 over:shadow-xl hover:-translate-y-1 
   transition-all duration-300 "
           >
-            <div className="bg-[#03612d] w-25 h-20 rounded-full flex justify-center items-center ">
-              <GiCow className="text-[#ffffff] text-6xl" />
+            <div className="bg-[#03612d] w-fit h-fit md:h-20 rounded-full flex justify-center items-center p-3 ">
+              <GiCow className="text-[#ffffff] text-5xl md:text-6xl" />
             </div>
             <div>
               {" "}
@@ -38,8 +38,8 @@ const QurbaniTips = () => {
             className="bg-[#ffff] border shadow rounded-lg p-5 flex items-center gap-8 over:shadow-xl hover:-translate-y-1 
   transition-all duration-300 "
           >
-            <div className="bg-[#03612d] w-25 h-20 rounded-full flex justify-center items-center ">
-              <FaRegCalendarAlt className="text-[#ffffff] text-5xl" />
+            <div className="bg-[#03612d] w-fit h-fit p-3 rounded-full flex justify-center items-center ">
+              <FaRegCalendarAlt className="text-[#ffffff] text-5xl md:text-6xl" />
             </div>
             <div>
               {" "}
@@ -56,8 +56,8 @@ const QurbaniTips = () => {
             className="bg-[#ffff] border shadow rounded-lg p-5 flex items-center gap-8 over:shadow-xl hover:-translate-y-1 
   transition-all duration-300 "
           >
-            <div className="bg-[#03612d] w-25 h-20 rounded-full flex justify-center items-center ">
-              <FaBalanceScale className="text-[#ffffff] text-6xl" />
+            <div className="bg-[#03612d] w-fit h-fit p-3 rounded-full flex justify-center items-center ">
+              <FaBalanceScale className="text-[#ffffff] text-5xl md:text-6xl" />
             </div>
             <div>
               {" "}

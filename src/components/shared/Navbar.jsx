@@ -14,7 +14,7 @@ const Navbar = () => {
     <div className=" bg-[#ffffff] border-2">
       {" "}
       <div className="container mx-auto  flex justify-between items-center pl-5 pr-3 py-5">
-        <div>
+        <Link href={"/"}>
           <Image
             src={logo}
             width={150}
@@ -22,7 +22,7 @@ const Navbar = () => {
             alt="nav logo"
             className="w-25 md:w-30"
           />
-        </div>
+        </Link>
         {/* menu */}
         <div>
           <NavMenu />
