@@ -1,6 +1,6 @@
-import { Spinner } from '@heroui/react';
-import React from 'react'
-import { BarLoader } from 'react-spinners'
+import { Spinner } from "@heroui/react";
+import React from "react";
+import { BarLoader } from "react-spinners";
 
 const loading = () => {
   return (
@@ -9,6 +9,6 @@ const loading = () => {
       <span className="text-xs text-muted"></span>
     </div>
   );
-}
+};
 
-export default loading
+export default loading;

@@ -36,6 +36,9 @@ const Footer = () => {
             <li className="text-md  pl-3 text-[#d3c7c7] hover:text-orange-400 w-fit">
               <Link href={"/profile"}>My Profile</Link>
             </li>
+            <li className="text-md  pl-3 text-[#d3c7c7] hover:text-orange-400 w-fit">
+              <Link href={"/about-us"}>About Us</Link>
+            </li>
           </ul>
 
           {/* contact info */}

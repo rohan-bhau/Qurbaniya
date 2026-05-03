@@ -8,7 +8,7 @@ const NavLink = ({ href, children }) => {
   const isActive = href === pathName;
   return (
     <Link
-      className={`${isActive ? "text-orange-500 border-b-3  border-orange-500" : ""}`}
+      className={`${isActive ? "text-[#158a47] border-b-3  border-[#158a47]" : ""}`}
       href={href}
     >
       {children}
