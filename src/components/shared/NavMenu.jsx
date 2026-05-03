@@ -27,9 +27,9 @@ export function NavMenu() {
     { icon: Person, path: "/profile", label: "Profile" },
     { icon: Heart, path: "/wishlist", label: "WishList" },
     { icon: IoInformationCircleOutline, path: "/about-us", label: "About Us" },
-    { icon: IoNewspaperOutline, path: "/blogs", label: "Blogs" },
-    { icon: IoHelpCircleOutline, path: "/faq", label: "FAQS" },
-    { icon: Gear, path: "/settings", label: "Settings" },
+    // { icon: IoNewspaperOutline, path: "/blogs", label: "Blogs" },
+    // { icon: IoHelpCircleOutline, path: "/faq", label: "FAQS" },
+    // { icon: Gear, path: "/settings", label: "Settings" },
   ];
 
   return (
