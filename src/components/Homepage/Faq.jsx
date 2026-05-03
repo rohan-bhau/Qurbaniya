@@ -35,8 +35,12 @@ export default function FAQSection() {
 
   return (
     <div className="py-16 px-6 bg-gray-50">
-      <div className="container mx-auto space-y-4">
-              <h2 className={`${poppins.className} text-3xl font-bold  mb-6`}>FAQ</h2>
+      <div className="container mx-auto px-5 md:px-7 space-y-4">
+        <h2
+          className={`${poppins.className} text-2xl border-b-2 border-[#689b7b] w-fit  font-semibold text-[#252222] mb-6`}
+        >
+         FAQ
+        </h2>
 
         {faqs.map((faq, i) => {
           const isOpen = active === i;

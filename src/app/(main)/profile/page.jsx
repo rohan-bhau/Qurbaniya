@@ -50,7 +50,7 @@ export default function ProfilePage() {
                 alt="profile"
                 width={80}
                 height={80}
-                className="rounded-full w-24 h-24 border-4 border-white shadow-md object-cover"
+                className="rounded-full w-full h-full border-4 border-white shadow-md object-cover"
               />
             ) : (
               <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-to-br from-pink-500 to-purple-500 text-white text-xl font-bold border-4 border-white shadow-md">
